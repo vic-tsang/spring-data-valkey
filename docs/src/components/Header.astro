@@ -34,7 +34,7 @@ const currentPath = Astro.url.pathname;
 		<SiteTitle />
 	</div>
 	<div class="middle sl-flex print:hidden">
-		<nav class="top-nav sl-hidden md:sl-flex" aria-label="Main">
+		<nav class="top-nav sl-hidden lg:sl-flex" aria-label="Main">
 			<ul>
 				{
 					navItems.map((item) => (
@@ -51,7 +51,7 @@ const currentPath = Astro.url.pathname;
 			{shouldRenderSearch && <Search />}
 		</div>
 	</div>
-	<div class="sl-hidden md:sl-flex print:hidden right-group">
+	<div class="sl-hidden lg:sl-flex print:hidden right-group">
 		<div class="sl-flex social-icons">
 			<SocialIcons />
 		</div>
@@ -112,38 +112,8 @@ const currentPath = Astro.url.pathname;
 			color: var(--sl-color-text-accent);
 		}
 
-		/* Tablet: make room for the nav by using an icon-only search, smaller links and tighter gaps. */
-		@media (min-width: 50rem) and (max-width: 71.99rem) {
-			.top-nav ul {
-				gap: 0;
-			}
-			.top-nav a {
-				padding: 0.5rem 0.4rem;
-				font-size: var(--sl-text-xs);
-			}
-			.header,
-			.right-group,
-			.middle {
-				gap: 0.5rem;
-			}
-		}
-
-		/* Narrow tablet: icon-only search. */
-		@media (min-width: 50rem) and (max-width: 63.99rem) {
-			.search :global(site-search button) {
-				width: 2.5rem !important;
-				min-width: 0 !important;
-				padding: 0 !important;
-				justify-content: center;
-			}
-			.search :global(site-search button span),
-			.search :global(site-search button kbd) {
-				display: none !important;
-			}
-		}
-
-		/* Wider tablet and up: search box with the "Search" label. */
-		@media (min-width: 64rem) {
+		/* Tablet and up: search box with the "Search" label. */
+		@media (min-width: 50rem) {
 			.search {
 				min-width: 0;
 			}
@@ -153,13 +123,14 @@ const currentPath = Astro.url.pathname;
 				justify-content: flex-end;
 			}
 			.search :global(site-search button) {
-				max-width: 14rem;
+				max-width: 32rem;
 			}
 		}
 
-		@media (min-width: 72rem) {
+		/* Tablet: keep the search box to 30% of the page width. */
+		@media (min-width: 50rem) and (max-width: 71.99rem) {
 			.search :global(site-search button) {
-				max-width: 32rem;
+				max-width: 30vw;
 			}
 		}
 

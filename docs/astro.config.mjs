@@ -16,6 +16,8 @@ export default defineConfig({
 			routeMiddleware: './src/routeData.ts',
 			components: {
 				Header: './src/components/Header.astro',
+				PageFrame: './src/components/PageFrame.astro',
+				MobileMenuToggle: './src/components/MobileMenuToggle.astro',
 				Hero: './src/components/Hero.astro',
 				MobileMenuFooter: './src/components/MobileMenuFooter.astro',
 			},
@@ -25,7 +27,7 @@ export default defineConfig({
 				dark: './src/assets/spring-data-valkey-logo-with-name-dark.svg',
 				replacesTitle: true,
 			},
-			customCss: ['./src/styles/custom.css', './src/styles/code-wrap.css', './src/styles/home.css'],
+			customCss: ['./src/styles/custom.css', './src/styles/code-wrap.css', './src/styles/home.css', './src/styles/tablet-menu.css'],
 			favicon: '/favicon-32x32.png',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/valkey-io/spring-data-valkey' }

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { PAGE_TITLE_ID } from '@astrojs/starlight/constants';
-import LinkButton from '../../node_modules/@astrojs/starlight/user-components/LinkButton.astro';
+import { LinkButton } from '@astrojs/starlight/components';
 import heroLogo from '../assets/spring-data-valkey-vines-logo.png';
 
 const { data } = Astro.locals.starlightRoute.entry;
@@ -97,8 +97,6 @@ if (image) {
 			max-width: 600px;
 			width: 100%;
 			height: auto;
-			transform: scale(2);
-			transform-origin: left center;
 			margin-block: 2rem;
 		}
 
@@ -132,6 +130,11 @@ if (image) {
 
 			.copy {
 				align-items: flex-start;
+			}
+
+			.hero-title-image {
+				transform: scale(2);
+				transform-origin: left center;
 			}
 
 			.actions {
